@@ -6,7 +6,7 @@ cd /src
 /svace/bin/svace build --init mvn clean install
 /svace/bin/svace analyze
 
-tar -cvf svace-dir.tar.gz .svace-dir
+tar cvpzf svace-dir.tar.gz .svace-dir
 rm -fr .svace-dir
 
 /codescoring/johnny scan dir . --project $JOB_NAME --create-project --save-results \
