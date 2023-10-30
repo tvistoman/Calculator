@@ -1,6 +1,0 @@
-Svace version: 3.4.230712 (git rev 0f66274a3e8bcf542478e22f7babcb220bfb88d1 2023-08-03 17:15:10 +0300)
-Host: t-Tower
-Current directory: /home/t/projects/Calculator
-Build options: build --init mvn clean compile
-Build start time: Mon, 30 Oct 2023 11:27:58 +0000
-Build finish time: Mon, 30 Oct 2023 11:28:03 +0000

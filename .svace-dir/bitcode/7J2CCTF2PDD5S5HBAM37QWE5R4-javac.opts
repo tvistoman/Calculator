@@ -1,4 +1,0 @@
-"-sourcepath"
-"/home/t/projects/Calculator/src/main/java:"
-"-classpath"
-"/home/t/projects/Calculator/target/classes:/home/t/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.14.2/jackson-dataformat-yaml-2.14.2.jar:/home/t/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.14.2/jackson-databind-2.14.2.jar:/home/t/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.14.2/jackson-annotations-2.14.2.jar:/home/t/.m2/repository/org/yaml/snakeyaml/1.33/snakeyaml-1.33.jar:/home/t/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.14.2/jackson-core-2.14.2.jar"
