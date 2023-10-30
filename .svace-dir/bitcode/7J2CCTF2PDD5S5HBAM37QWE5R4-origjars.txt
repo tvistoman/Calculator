@@ -1,0 +1,3 @@
+d9b5dee405d6df11a736e621fe80621de99ea141;jackson-dataformat-yaml-2.14.2.jar
+a1cebc3028f3f40a3862696323d7f9802681200a;jackson-databind-2.14.2.jar
+53c1b16a25a01a98ab9c1894bad285f8b4e1e008;jackson-core-2.14.2.jar

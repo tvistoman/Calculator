@@ -1,0 +1,19 @@
+[INTERCEPTED]|/usr/share/maven/bin/mvn|mvn;clean;compile;
+[INTERCEPTED]|/usr/bin/uname|uname;
+[INTERCEPTED]|/usr/bin/ls|ls;-ld;/usr/bin/mvn;
+[INTERCEPTED]|/usr/bin/expr|expr;lrwxrwxrwx 1 root root 21 окт  9 17:58 /usr/bin/mvn -> /etc/alternatives/mvn;:;.*-> \(.*\)$;
+[INTERCEPTED]|/usr/bin/expr|expr;/etc/alternatives/mvn;:;/.*;
+[INTERCEPTED]|/usr/bin/ls|ls;-ld;/etc/alternatives/mvn;
+[INTERCEPTED]|/usr/bin/expr|expr;lrwxrwxrwx 1 root root 24 окт  9 17:58 /etc/alternatives/mvn -> /usr/share/maven/bin/mvn;:;.*-> \(.*\)$;
+[INTERCEPTED]|/usr/bin/expr|expr;/usr/share/maven/bin/mvn;:;/.*;
+[INTERCEPTED]|/usr/bin/dirname|dirname;/usr/share/maven/bin/mvn;
+[INTERCEPTED]|/usr/bin/which.debianutils|which;java;
+[INTERCEPTED]|/usr/lib/jvm/java-18-openjdk-amd64/bin/java|/usr/bin/java;-classpath;/usr/share/maven/boot/plexus-classworlds-2.x.jar;-Dclassworlds.conf=/usr/share/maven/bin/m2.conf;-Dmaven.home=/usr/share/maven;-Dlibrary.jansi.path=/usr/share/maven/lib/jansi-native;-Dmaven.multiModuleProjectDirectory=/home/t/projects/Calculator;org.codehaus.plexus.classworlds.launcher.Launcher;clean;compile;
+[INTERCEPTED]|/usr/lib/jvm/java-18-openjdk-amd64/lib/jspawnhelper|92:95;
+[INTERCEPTED]|/home/t/tools/svace/prog/build-capture/dummy|/home/t/tools/svace/prog/build-capture/dummy;javac;/home/t/projects/Calculator/.svace-dir/bitcode/java-agent-javac-D9269B8653BC6D588E9C97F79C7BE4BD.txt;
+[RECOGNIZED]|comp/java/javac-agent|/home/t/tools/svace/prog/build-capture/dummy|/home/t/tools/svace/prog/build-capture/dummy;javac;/home/t/projects/Calculator/.svace-dir/bitcode/java-agent-javac-D9269B8653BC6D588E9C97F79C7BE4BD.txt;
+[ORIGINAL]|okay|/home/t/tools/svace/prog/build-capture/dummy;javac;/home/t/projects/Calculator/.svace-dir/bitcode/java-agent-javac-D9269B8653BC6D588E9C97F79C7BE4BD.txt;
+[JAVA-ORIGINAL]|okay|/home/t/tools/svace/prog/build-capture/dummy;javac;/home/t/projects/Calculator/.svace-dir/bitcode/java-agent-javac-D9269B8653BC6D588E9C97F79C7BE4BD.txt;
+[JAVA]|okay|6|1391|7J2CCTF2PDD5S5HBAM37QWE5R4
+[JAVA-OPTIONAL]|okay|/home/t/tools/svace/prog/build-capture/dummy;javac;/home/t/projects/Calculator/.svace-dir/bitcode/java-agent-javac-D9269B8653BC6D588E9C97F79C7BE4BD.txt;
+[OPTIONAL]|okay|/home/t/tools/svace/prog/build-capture/dummy;javac;/home/t/projects/Calculator/.svace-dir/bitcode/java-agent-javac-D9269B8653BC6D588E9C97F79C7BE4BD.txt;

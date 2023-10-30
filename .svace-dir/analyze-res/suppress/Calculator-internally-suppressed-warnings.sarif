@@ -1,0 +1,1772 @@
+{
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "Svace",
+        "version" : "3.4.230712",
+        "informationUri" : "http://svace.pages.ispras.ru/svace-website",
+        "rules" : [ {
+          "id" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+          "name" : "DEREF_OF_NULL.RET"
+        } ]
+      }
+    },
+    "results" : [ {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference 't', returned from function 'result.findSuperType(Class)JavaType' at TypeFactory.java:916, may be null and is dereferenced at TypeFactory.java:917."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeFactory.java"
+          },
+          "region" : {
+            "startLine" : 917,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Dereference"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeBase.java"
+          },
+          "region" : {
+            "startLine" : 149,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeFactory.java"
+                },
+                "region" : {
+                  "startLine" : 917,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Dereference"
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeBase.java"
+                },
+                "region" : {
+                  "startLine" : 149,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeFactory.java"
+                },
+                "region" : {
+                  "startLine" : 916,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'result.findSuperType(Class)JavaType'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-5.92524364167208'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference 'keyType', returned from function 'am.getParameterType(int)JavaType' at BeanDeserializerFactory.java:815, may be null and is dereferenced at BeanDeserializerFactory.java:860."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java"
+          },
+          "region" : {
+            "startLine" : 860,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Dereference"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+          },
+          "region" : {
+            "startLine" : 142,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java"
+                },
+                "region" : {
+                  "startLine" : 860,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Dereference"
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 142,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java"
+                },
+                "region" : {
+                  "startLine" : 815,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'am.getParameterType(int)JavaType'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-8.775360836400422'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference 'themeList', returned from function 'mapper.readValue(File,Class)Object' at ThemeLoader.java:23, may be null and is dereferenced at ThemeLoader.java:24."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file:///home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/ThemeLoader.java"
+          },
+          "region" : {
+            "startLine" : 24,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Dereference"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java"
+          },
+          "region" : {
+            "startLine" : 4728,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file:///home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/ThemeLoader.java"
+                },
+                "region" : {
+                  "startLine" : 24,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Dereference"
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java"
+                },
+                "region" : {
+                  "startLine" : 4728,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java"
+                },
+                "region" : {
+                  "startLine" : 4728,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Assign '0' to 'result'"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java"
+                },
+                "region" : {
+                  "startLine" : 4737,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "func ret"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java"
+                },
+                "region" : {
+                  "startLine" : 3542,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'this._readMapAndClose(JsonParser,JavaType)Object'"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file:///home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/ThemeLoader.java"
+                },
+                "region" : {
+                  "startLine" : 23,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'mapper.readValue(File,Class)Object'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-14.475595225857107'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference 'type', returned from function 'anyMethod.getRawParameterType(int)Class' at BasicBeanDescription.java:312, may be null and is dereferenced at BasicBeanDescription.java:316."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java"
+          },
+          "region" : {
+            "startLine" : 316,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Dereference"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+          },
+          "region" : {
+            "startLine" : 135,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java"
+                },
+                "region" : {
+                  "startLine" : 316,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Dereference"
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 135,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 135,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Assign '0' to '%stack[0]'"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java"
+                },
+                "region" : {
+                  "startLine" : 312,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'anyMethod.getRawParameterType(int)Class'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-14.475595225857107'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference, returned from function 'meh.getParameterType(int)JavaType' at POJOPropertyBuilder.java:1396, may be null and is dereferenced at POJOPropertyBuilder.java:1396."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder.java"
+          },
+          "region" : {
+            "startLine" : 1396,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Dereference"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+          },
+          "region" : {
+            "startLine" : 142,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder.java"
+                },
+                "region" : {
+                  "startLine" : 1396,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Dereference"
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 142,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder.java"
+                },
+                "region" : {
+                  "startLine" : 1396,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'meh.getParameterType(int)JavaType'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-8.775360836400422'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference, returned from function 'ctor.getRawParameterType(int)Class' at JDK14Util.java:192, may be null and is dereferenced at JDK14Util.java:192."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/jdk14/JDK14Util.java"
+          },
+          "region" : {
+            "startLine" : 192,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Dereference"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedConstructor.java"
+          },
+          "region" : {
+            "startLine" : 97,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/jdk14/JDK14Util.java"
+                },
+                "region" : {
+                  "startLine" : 192,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Dereference"
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedConstructor.java"
+                },
+                "region" : {
+                  "startLine" : 97,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedConstructor.java"
+                },
+                "region" : {
+                  "startLine" : 97,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Assign '0' to '%stack[0]'"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/jdk14/JDK14Util.java"
+                },
+                "region" : {
+                  "startLine" : 192,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'ctor.getRawParameterType(int)Class'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-8.775360836400422'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference, returned from function 'this.getRawParameterType(int)Class' at AnnotatedMethod.java:198, may be null and is dereferenced at AnnotatedMethod.java:198."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+          },
+          "region" : {
+            "startLine" : 198,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Dereference"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+          },
+          "region" : {
+            "startLine" : 135,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 198,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Dereference"
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 135,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 135,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Assign '0' to '%stack[0]'"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 198,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'this.getRawParameterType(int)Class'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-14.475595225857107'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference, returned from function 'prop.getName()String' at POJOPropertiesCollector.java:1220, may be null and is dereferenced at POJOPropertiesCollector.java:1220 by passing as 1st parameter to function 'sorted.put(Object,Object)Object' at POJOPropertiesCollector.java:1220."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java"
+          },
+          "region" : {
+            "startLine" : 1220,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Variable 'getName()' is passed to function 'sorted.put(Object,Object)Object' as 1st parameter"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder.java"
+          },
+          "region" : {
+            "startLine" : 155,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java"
+                },
+                "region" : {
+                  "startLine" : 1220,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Variable 'getName()' is passed to function 'sorted.put(Object,Object)Object' as 1st parameter"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://[unknown]"
+                },
+                "region" : {
+                  "startLine" : 27,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "key is dereferenced here."
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder.java"
+                },
+                "region" : {
+                  "startLine" : 155,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder.java"
+                },
+                "region" : {
+                  "startLine" : 155,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Assign '0' to '%stack[0]'"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java"
+                },
+                "region" : {
+                  "startLine" : 1220,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'prop.getName()String'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-14.475595225857107'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference 'cls', returned from function 'am.getRawParameterType(int)Class' at BasicBeanDescription.java:682, may be null and is dereferenced at BasicBeanDescription.java:683 by passing as 1st parameter to function 'java.lang.Class.isAssignableFrom(Class)boolean' at BasicBeanDescription.java:683."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java"
+          },
+          "region" : {
+            "startLine" : 683,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Variable 'cls' is passed to function 'java.lang.Class.isAssignableFrom(Class)boolean' as 1st parameter"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+          },
+          "region" : {
+            "startLine" : 135,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java"
+                },
+                "region" : {
+                  "startLine" : 683,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Variable 'cls' is passed to function 'java.lang.Class.isAssignableFrom(Class)boolean' as 1st parameter"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://[unknown]"
+                },
+                "region" : {
+                  "startLine" : 107,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "c is dereferenced here."
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 135,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 135,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Assign '0' to '%stack[0]'"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java"
+                },
+                "region" : {
+                  "startLine" : 682,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'am.getRawParameterType(int)Class'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-14.475595225857107'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference 'cls', returned from function 'am.getRawParameterType(int)Class' at BasicBeanDescription.java:721, may be null and is dereferenced at BasicBeanDescription.java:722 by passing as 1st parameter to function 'java.lang.Class.isAssignableFrom(Class)boolean' at BasicBeanDescription.java:722."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java"
+          },
+          "region" : {
+            "startLine" : 722,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Variable 'cls' is passed to function 'java.lang.Class.isAssignableFrom(Class)boolean' as 1st parameter"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+          },
+          "region" : {
+            "startLine" : 135,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java"
+                },
+                "region" : {
+                  "startLine" : 722,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Variable 'cls' is passed to function 'java.lang.Class.isAssignableFrom(Class)boolean' as 1st parameter"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://[unknown]"
+                },
+                "region" : {
+                  "startLine" : 107,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "c is dereferenced here."
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 135,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 135,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Assign '0' to '%stack[0]'"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java"
+                },
+                "region" : {
+                  "startLine" : 721,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'am.getRawParameterType(int)Class'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-14.475595225857107'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference 'newType', returned from function 'com.fasterxml.jackson.databind.introspect.AnnotatedConstructor.getRawParameterType(int)Class' at CreatorCollector.java:314, may be null and is dereferenced at CreatorCollector.java:330."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/impl/CreatorCollector.java"
+          },
+          "region" : {
+            "startLine" : 330,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Dereference"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedConstructor.java"
+          },
+          "region" : {
+            "startLine" : 97,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/impl/CreatorCollector.java"
+                },
+                "region" : {
+                  "startLine" : 330,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Dereference"
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedConstructor.java"
+                },
+                "region" : {
+                  "startLine" : 97,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedConstructor.java"
+                },
+                "region" : {
+                  "startLine" : 97,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Assign '0' to '%stack[0]'"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/impl/CreatorCollector.java"
+                },
+                "region" : {
+                  "startLine" : 314,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'com.fasterxml.jackson.databind.introspect.AnnotatedConstructor.getRawParameterType(int)Class'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-8.775360836400422'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference 'type', returned from function 'ctxt.constructType(Class)JavaType' at BeanDeserializerFactory.java:402, may be null and is dereferenced at TypeFactory.java:692 by passing as 1st parameter to function 'getTypeFactory().findTypeParameters(JavaType,Class)JavaType[]' at BeanDeserializerFactory.java:403."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java"
+          },
+          "region" : {
+            "startLine" : 403,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Variable 'type' is passed to function 'getTypeFactory().findTypeParameters(JavaType,Class)JavaType[]' as 1st parameter"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java"
+          },
+          "region" : {
+            "startLine" : 723,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java"
+                },
+                "region" : {
+                  "startLine" : 403,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Variable 'type' is passed to function 'getTypeFactory().findTypeParameters(JavaType,Class)JavaType[]' as 1st parameter"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeFactory.java"
+                },
+                "region" : {
+                  "startLine" : 692,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "type is dereferenced here."
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java"
+                },
+                "region" : {
+                  "startLine" : 723,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java"
+                },
+                "region" : {
+                  "startLine" : 723,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Assign '0' to '%stack[0]'"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java"
+                },
+                "region" : {
+                  "startLine" : 402,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'ctxt.constructType(Class)JavaType'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-14.475595225857107'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference 'builderType', returned from function 'ctxt.constructType(Class)JavaType' at BeanDeserializerFactory.java:165, may be null and is dereferenced at DeserializationConfig.java:952 by passing as 1st parameter to function 'getConfig().introspectForBuilder(JavaType,BeanDescription)BeanDescription' at BeanDeserializerFactory.java:167."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java"
+          },
+          "region" : {
+            "startLine" : 167,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Variable 'builderType' is passed to function 'getConfig().introspectForBuilder(JavaType,BeanDescription)BeanDescription' as 1st parameter"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java"
+          },
+          "region" : {
+            "startLine" : 723,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java"
+                },
+                "region" : {
+                  "startLine" : 167,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Variable 'builderType' is passed to function 'getConfig().introspectForBuilder(JavaType,BeanDescription)BeanDescription' as 1st parameter"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationConfig.java"
+                },
+                "region" : {
+                  "startLine" : 952,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Variable 'builderType' is passed to function 'getClassIntrospector().forDeserializationWithBuilder(DeserializationConfig,JavaType,MixInResolver,BeanDescription)BasicBeanDescription' as 2nd parameter"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicClassIntrospector.java"
+                },
+                "region" : {
+                  "startLine" : 116,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Variable 'builderType' is passed to function 'this.collectPropertiesWithBuilder(MapperConfig,JavaType,MixInResolver,BeanDescription,boolean)POJOPropertiesCollector' as 2nd parameter"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicClassIntrospector.java"
+                },
+                "region" : {
+                  "startLine" : 207,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Variable 'type' is passed to function 'this._resolveAnnotatedClass(MapperConfig,JavaType,MixInResolver)AnnotatedClass' as 2nd parameter"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicClassIntrospector.java"
+                },
+                "region" : {
+                  "startLine" : 317,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Variable 'type' is passed to function 'com.fasterxml.jackson.databind.introspect.AnnotatedClassResolver.resolve(MapperConfig,JavaType,MixInResolver)AnnotatedClass' as 2nd parameter"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedClassResolver.java"
+                },
+                "region" : {
+                  "startLine" : 86,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "forType is dereferenced here."
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java"
+                },
+                "region" : {
+                  "startLine" : 723,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java"
+                },
+                "region" : {
+                  "startLine" : 723,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Assign '0' to '%stack[0]'"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java"
+                },
+                "region" : {
+                  "startLine" : 165,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'ctxt.constructType(Class)JavaType'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-14.475595225857107'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference 'valueType', returned from function 'am.getParameterType(int)JavaType' at BeanDeserializerFactory.java:816, may be null and is dereferenced at BasicDeserializerFactory.java:2351 by passing as 3rd parameter to function 'this.resolveMemberAndTypeAnnotations(DeserializationContext,AnnotatedMember,JavaType)JavaType' at BeanDeserializerFactory.java:817."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java"
+          },
+          "region" : {
+            "startLine" : 817,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Variable 'valueType' is passed to function 'this.resolveMemberAndTypeAnnotations(DeserializationContext,AnnotatedMember,JavaType)JavaType' as 3rd parameter"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+          },
+          "region" : {
+            "startLine" : 142,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java"
+                },
+                "region" : {
+                  "startLine" : 817,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Variable 'valueType' is passed to function 'this.resolveMemberAndTypeAnnotations(DeserializationContext,AnnotatedMember,JavaType)JavaType' as 3rd parameter"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java"
+                },
+                "region" : {
+                  "startLine" : 2351,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "intr != 0"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java"
+                },
+                "region" : {
+                  "startLine" : 2358,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "deref"
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 142,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java"
+                },
+                "region" : {
+                  "startLine" : 816,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'am.getParameterType(int)JavaType'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-8.775360836400422'."
+      } ]
+    }, {
+      "ruleId" : "SvEng.ND.8:DEREF_OF_NULL.RET",
+      "message" : {
+        "text" : "Reference, returned from function 'factory.getParameterType(int)JavaType' at EnumDeserializer.java:124, may be null and is dereferenced at FactoryBasedEnumDeserializer.java:55 by passing as 3rd parameter to function 'new com.fasterxml.jackson.databind.deser.std.FactoryBasedEnumDeserializer(java.lang.Class,com.fasterxml.jackson.databind.introspect.AnnotatedMethod,com.fasterxml.jackson.databind.JavaType,com.fasterxml.jackson.databind.deser.ValueInstantiator,com.fasterxml.jackson.databind.deser.SettableBeanProperty[])' at EnumDeserializer.java:124."
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/std/EnumDeserializer.java"
+          },
+          "region" : {
+            "startLine" : 124,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Variable 'getParameterType()' is passed to function 'new com.fasterxml.jackson.databind.deser.std.FactoryBasedEnumDeserializer(java.lang.Class,com.fasterxml.jackson.databind.introspect.AnnotatedMethod,com.fasterxml.jackson.databind.JavaType,com.fasterxml.jackson.databind.deser.ValueInstantiator,com.fasterxml.jackson.databind.deser.SettableBeanProperty[])' as 3rd parameter"
+        }
+      }, {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+          },
+          "region" : {
+            "startLine" : 142,
+            "startColumn" : 0
+          }
+        },
+        "message" : {
+          "text" : "Null constant"
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "message" : {
+            "text" : "dereference"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/std/EnumDeserializer.java"
+                },
+                "region" : {
+                  "startLine" : 124,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Variable 'getParameterType()' is passed to function 'new com.fasterxml.jackson.databind.deser.std.FactoryBasedEnumDeserializer(java.lang.Class,com.fasterxml.jackson.databind.introspect.AnnotatedMethod,com.fasterxml.jackson.databind.JavaType,com.fasterxml.jackson.databind.deser.ValueInstantiator,com.fasterxml.jackson.databind.deser.SettableBeanProperty[])' as 3rd parameter"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/std/FactoryBasedEnumDeserializer.java"
+                },
+                "region" : {
+                  "startLine" : 55,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "paramType is dereferenced here."
+              }
+            }
+          } ]
+        }, {
+          "message" : {
+            "text" : "possible null"
+          },
+          "locations" : [ {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/AnnotatedMethod.java"
+                },
+                "region" : {
+                  "startLine" : 142,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Null constant"
+              }
+            }
+          }, {
+            "location" : {
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "file://jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/std/EnumDeserializer.java"
+                },
+                "region" : {
+                  "startLine" : 124,
+                  "startColumn" : 0
+                }
+              },
+              "message" : {
+                "text" : "Call of 'factory.getParameterType(int)JavaType'"
+              }
+            }
+          } ]
+        } ]
+      } ],
+      "suppressions" : [ {
+        "justification" : "Return value usually is not checked in this program.  z-rate is '-8.775360836400422'."
+      } ]
+    } ]
+  } ]
+}

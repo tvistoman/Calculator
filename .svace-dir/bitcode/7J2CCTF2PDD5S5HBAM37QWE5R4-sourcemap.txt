@@ -1,0 +1,8 @@
+~fullversion:17.0.5+8-tags-javac-3.4.230712-cge9-git-bd8b72cb77-2023-07-01
+~srcencoding:UTF-8
+~filemap:com.houarizegai.calculator.theme.properties.ThemeList;/home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/ThemeList.java
+~filemap:com.houarizegai.calculator.theme.properties.Theme;/home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/Theme.java
+~filemap:com.houarizegai.calculator.util.ColorUtil;/home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/util/ColorUtil.java
+~filemap:com.houarizegai.calculator.ui.CalculatorUI;/home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java
+~filemap:com.houarizegai.calculator.theme.ThemeLoader;/home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/ThemeLoader.java
+~filemap:com.houarizegai.calculator.App;/home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java

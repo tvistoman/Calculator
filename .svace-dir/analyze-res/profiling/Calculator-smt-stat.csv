@@ -1,0 +1,17 @@
+Statistic for smt requests:
+key|sat|unsat|unknow|error
+ru.isp.svace.plugin.derefofnull.DerefOfNullPathSensPlugin$DerefChecker:interface ru.isp.svace.ipa.operation.builtin.CopyOperationGroup.deref|0|23|0|0
+FuncCallResAttr|21|1|0|0
+DerefOfNullRetSensPlugin|17|0|0|0
+ru.isp.svace.plugin.derefofnull.DerefOfNullInconsistentPlugin$EndFuncChecker:interface ru.isp.svace.ipa.operation.builtin.CopyOperationGroup.functionEndForVar|4|0|0|0
+ru.isp.svace.plugin.derefofnull.DerefOfNullPathSensPlugin$DerefChecker:interface ru.isp.svace.ipa.operation.builtin.CopyOperationGroup.apply|0|2|0|0
+NegativeIfCond|1|0|0|0
+
+Time statistic (ms):
+key|max|average|number|sum
+ru.isp.svace.plugin.derefofnull.DerefOfNullPathSensPlugin$DerefChecker:interface ru.isp.svace.ipa.operation.builtin.CopyOperationGroup.deref|45|12.434783|23|286
+FuncCallResAttr|22|11.318182|22|249
+DerefOfNullRetSensPlugin|43|11.117647|17|189
+ru.isp.svace.plugin.derefofnull.DerefOfNullInconsistentPlugin$EndFuncChecker:interface ru.isp.svace.ipa.operation.builtin.CopyOperationGroup.functionEndForVar|16|11.0|4|44
+ru.isp.svace.plugin.derefofnull.DerefOfNullPathSensPlugin$DerefChecker:interface ru.isp.svace.ipa.operation.builtin.CopyOperationGroup.apply|14|9.0|2|18
+NegativeIfCond|15|15.0|1|15

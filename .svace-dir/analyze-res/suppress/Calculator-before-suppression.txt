@@ -1,0 +1,216 @@
+Analysis results:
+[DEAD_CODE]
+  REDUNDANT_COMPARISON: 6
+  REDUNDANT_COMPARISON.ALWAYS_FALSE: 5
+  REDUNDANT_COMPARISON.RET: 1
+  UNREACHABLE_CODE: 4
+  UNREACHABLE_CODE.EXCEPTION: 18
+  UNREACHABLE_CODE.RET: 2
+[DEREF_OF_NULL]
+  DEREF_OF_NULL.RET.STAT: 1
+  NEW.DEREF_OF_NULL.INCONSISTENT: 4
+  NULL_AFTER_DEREF: 1
+[FUNC_RES]
+  UNUSED_FUNC_RES.MINOR: 2
+[LEAKS]
+  HANDLE_LEAK: 1
+  HANDLE_LEAK.EX: 1
+[NEGATIVE]
+  NEGATIVE_CODE_ERROR.EX: 1
+[SPOTBUGS]
+  FB.EI_EXPOSE_REP: 1
+  FB.EI_EXPOSE_REP2: 1
+  FB.SF_SWITCH_NO_DEFAULT: 1
+[TAINTED]
+  TAINTED.INT_OVERFLOW: 7
+[UAST]
+  DEFAULT_CASE_MISSING: 1
+[OTHER]
+  NO_CATCH: 1
+  NO_CATCH.LIBRARY: 1
+  NO_CATCH.STRICT: 1
+Total warnings: 61
+
+Suppression stats:
+[DEREF_OF_NULL]
+  DEREF_OF_NULL.RET: 15
+Total warnings: 15
+
+* DEFAULT_CASE_MISSING: Switch operator misses default case
+    Switch at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:134
+* DEREF_OF_NULL.RET.STAT: Return value of a function 'TypeBase.findSuperType' is dereferenced at TypeFactory.java:917 without checking for null, but it is usually checked for this function (4/5).
+    [dereference] Dereference at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeFactory.java:917
+    [counter-example] counter-example: TypeBase.findSuperType at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeFactory.java:692
+    [counter-example] counter-example: TypeBase.findSuperType at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeFactory.java:533
+    [counter-example] counter-example: TypeBase.findSuperType at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeBase.java:144
+    [counter-example] counter-example: TypeBase.findSuperType at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeBase.java:136
+* FB.EI_EXPOSE_REP: com.houarizegai.calculator.theme.properties.ThemeList.getThemes() may expose internal representation by returning ThemeList.themes
+    [At ThemeList.java:[line 12]] At ThemeList.java:[line 12] at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/ThemeList.java:12
+    [In method com.houarizegai.calculator.theme.properties.ThemeList.getThemes()] In method com.houarizegai.calculator.theme.properties.ThemeList.getThemes() at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/ThemeList.java:11
+    [In class com.houarizegai.calculator.theme.properties.ThemeList] In class com.houarizegai.calculator.theme.properties.ThemeList at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/ThemeList.java:8
+* FB.EI_EXPOSE_REP2: com.houarizegai.calculator.theme.properties.ThemeList.setThemes(List) may expose internal representation by storing an externally mutable object into ThemeList.themes
+    [At ThemeList.java:[line 16]] At ThemeList.java:[line 16] at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/ThemeList.java:16
+    [In method com.houarizegai.calculator.theme.properties.ThemeList.setThemes(List)] In method com.houarizegai.calculator.theme.properties.ThemeList.setThemes(List) at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/ThemeList.java:15
+    [In class com.houarizegai.calculator.theme.properties.ThemeList] In class com.houarizegai.calculator.theme.properties.ThemeList at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/ThemeList.java:8
+* FB.SF_SWITCH_NO_DEFAULT: Switch statement found in com.houarizegai.calculator.ui.CalculatorUI.lambda$initCalculatorTypeSelector$1(ItemEvent) where default case is missing
+    [At CalculatorUI.java:[lines 134-145]] At CalculatorUI.java:[lines 134-145] at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:134
+    [In method com.houarizegai.calculator.ui.CalculatorUI.lambda$initCalculatorTypeSelector$1(ItemEvent)] In method com.houarizegai.calculator.ui.CalculatorUI.lambda$initCalculatorTypeSelector$1(ItemEvent) at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:1
+    [In class com.houarizegai.calculator.ui.CalculatorUI] In class com.houarizegai.calculator.ui.CalculatorUI at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:1
+* HANDLE_LEAK: The handle 'in' is created at [unknown]:42 by calling function 'new java.io.FileInputStream(java.lang.String)' and lost at [unknown]:43.
+    [acquire] Call of 'new java.io.FileInputStream(java.lang.String)' at [unknown]:42
+    [leaked] leaked at [unknown]:43
+    [assignment] assign at [unknown]:42
+* HANDLE_LEAK.EX: The handle 'in' is created at [unknown]:42 by calling function 'new java.io.FileInputStream(java.lang.String)' and lost at [unknown]:43.
+    [acquire] Call of 'new java.io.FileInputStream(java.lang.String)' at [unknown]:42
+    [leaked] leak at [unknown]:43
+* NEGATIVE_CODE_ERROR.EX: Variable 'nonAnnotatedParamIndex', which might receive a negative value at BasicDeserializerFactory.java:537, is used without checking at CreatorCandidate.java:63 by passing as 1st parameter to function 'candidate.findImplicitParamName(int)PropertyName' at BasicDeserializerFactory.java:597.
+    [value use] Variable 'nonAnnotatedParamIndex' is passed to function 'candidate.findImplicitParamName(int)PropertyName' as 1st parameter at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:597
+    [error code] Assign the negative value to variable 'nonAnnotatedParamIndex' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:537
+* NEW.DEREF_OF_NULL.INCONSISTENT: Reference ''e'' that is compared to a null value at NativeImageUtil.java:36, is dereferenced at NativeImageUtil.java:36.
+    [null] Compared with null at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/NativeImageUtil.java:36
+    [dereference] (e instanceof class java/lang/reflect/InvocationTargetException) == 0 at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/NativeImageUtil.java:36
+* NEW.DEREF_OF_NULL.INCONSISTENT: Reference ''p0'' that is compared to a null value at ObjectMapper.java:4738, is dereferenced at ObjectMapper.java:4723.
+    [null] Compared with null at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+    [dereference] Variable 'p' is passed to function 'this._initForReading(JsonParser,JavaType)JsonToken' as 1st parameter at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4723
+* NEW.DEREF_OF_NULL.INCONSISTENT: Reference ''type'' that is compared to a null value at DeserializerCache.java:387, is dereferenced at DeserializerCache.java:371.
+    [null] Compared with null at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:387
+    [dereference] deref at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:371
+* NEW.DEREF_OF_NULL.INCONSISTENT: Reference ''type._class'' that is compared to a null value at SubTypeValidator.java:279, is dereferenced at SubTypeValidator.java:265.
+    [null] Compared with null at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/jsontype/impl/SubTypeValidator.java:279
+    [dereference] deref at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/jsontype/impl/SubTypeValidator.java:265
+* NO_CATCH: Top-level function 'App.main' doesn't catch exceptions of types 'java/lang/IllegalArgumentException*', which could be thrown by callees.
+    Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8
+* NO_CATCH.LIBRARY: Top-level function 'App.main' doesn't catch exceptions of types 'java/lang/SecurityException*, java/util/IllegalFormatException*, java/util/NoSuchElementException*', which could be thrown by callees.
+    [exception trace] Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8
+    [exception trace] Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8
+    [exception trace] Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8
+* NO_CATCH.STRICT: Top-level function 'App.main' doesn't catch exceptions of types 'java/lang/IllegalStateException*, java/lang/NegativeArraySizeException*, java/lang/NullPointerException*', which could be thrown by callees.
+    [exception trace] Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8
+    [exception trace] Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8
+    [exception trace] Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8
+* NULL_AFTER_DEREF: Reference 'p', which is dereferenced at ObjectMapper.java:4814 by passing as 1st parameter to function 'this._initForReading(JsonParser,JavaType)JsonToken' at ObjectMapper.java:4723, is compared to a null value at ObjectMapper.java:4738.
+    [null check] null check at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+    [dereference] Variable 'p' is passed to function 'this._initForReading(JsonParser,JavaType)JsonToken' as 1st parameter at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4723
+    [assign] assign at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+* REDUNDANT_COMPARISON: Redundant comparison of '<internalIdx4>' with null constant at ObjectMapper.java:4738.
+    [comparison] comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+    [is not null] result of new is not null at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4721
+* REDUNDANT_COMPARISON: Redundant comparison 'gen' == '0' ({0} == 0) is always true at DatabindContext.java:329.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DatabindContext.java:329
+* REDUNDANT_COMPARISON: Redundant comparison 'conv' == '0' ({0} == 0) is always true at DatabindContext.java:382.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DatabindContext.java:382
+* REDUNDANT_COMPARISON: Redundant comparison 'conv' == '0' ({0} == 0) is always true at BasicBeanDescription.java:848.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java:848
+* REDUNDANT_COMPARISON: Redundant comparison 'resolver' == '0' ({0} == 0) is always true at DatabindContext.java:342.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DatabindContext.java:342
+* REDUNDANT_COMPARISON: Redundant comparison 'tryToResolveUnresolvedObjectId()' == '0' ({0} == 0) is always true at DefaultDeserializationContext.java:167.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DefaultDeserializationContext.java:167
+* REDUNDANT_COMPARISON.ALWAYS_FALSE: Redundant comparison 'pns' != '0' ({0} != 0) is always false at POJOPropertiesCollector.java:1361.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java:1361
+* REDUNDANT_COMPARISON.ALWAYS_FALSE: Redundant comparison 'inst' != '0' ({0} != 0) is always false at BasicDeserializerFactory.java:384.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:384
+* REDUNDANT_COMPARISON.ALWAYS_FALSE: Redundant comparison 'needMerge' == '0' ({1} == 0) is always false at BasicDeserializerFactory.java:1273.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1273
+* REDUNDANT_COMPARISON.ALWAYS_FALSE: Redundant comparison 'needMerge' == '0' ({1} == 0) is always false at BasicDeserializerFactory.java:1286.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1286
+* REDUNDANT_COMPARISON.ALWAYS_FALSE: Redundant comparison '<internalIdx4>' == '0' ({[1, +inf]} == 0) is always false at ObjectMapper.java:4738.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+* REDUNDANT_COMPARISON.RET: Redundant comparison 'tryToResolveUnresolvedObjectId()' != '0' ({0} != 0) is always false at DefaultDeserializationContext.java:167.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DefaultDeserializationContext.java:167
+* TAINTED.INT_OVERFLOW: Integer value '<returnPtr>' obtained from untrusted source at CalculatorUI.java:89 may underflow at CalculatorUI.java:178.
+    [integer underflow] integer underflow at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:178
+    [tainted] Arithmetic operation at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:89
+* TAINTED.INT_OVERFLOW: Integer value '<returnPtr>' obtained from untrusted source at CalculatorUI.java:89 may underflow at CalculatorUI.java:195.
+    [integer underflow] integer underflow at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:195
+    [tainted] Arithmetic operation at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:89
+* TAINTED.INT_OVERFLOW: Integer value '<returnPtr>' obtained from untrusted source at CalculatorUI.java:89 may underflow at CalculatorUI.java:260.
+    [integer underflow] integer underflow at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:260
+    [tainted] Arithmetic operation at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:89
+* TAINTED.INT_OVERFLOW: Integer value '<returnPtr>' obtained from untrusted source at CalculatorUI.java:89 may underflow at CalculatorUI.java:325.
+    [integer underflow] integer underflow at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:325
+    [tainted] Arithmetic operation at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:89
+* TAINTED.INT_OVERFLOW: Integer value '<returnPtr>' obtained from untrusted source at CalculatorUI.java:89 may underflow at CalculatorUI.java:391.
+    [integer underflow] integer underflow at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:391
+    [tainted] Arithmetic operation at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:89
+* TAINTED.INT_OVERFLOW: Integer value '<returnPtr>' obtained from untrusted source at CalculatorUI.java:89 may underflow at CalculatorUI.java:439.
+    [integer underflow] integer underflow at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:439
+    [tainted] Arithmetic operation at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:89
+* TAINTED.INT_OVERFLOW: Integer value '<returnPtr>' obtained from untrusted source at CalculatorUI.java:89 may underflow at CalculatorUI.java:475.
+    [integer underflow] integer underflow at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:475
+    [tainted] Arithmetic operation at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:89
+* UNREACHABLE_CODE: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+    [<internalIdx4> == 0 is always false because at this program point all possible values of the variable <internalIdx4> belong to {[1, +inf]}] <internalIdx4> == 0 is always false because at this program point all possible values of the variable <internalIdx4> belong to {[1, +inf]} at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+* UNREACHABLE_CODE: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1273
+    [needMerge == 0 is always false because at this program point the variable needMerge is always equal to {1}] needMerge == 0 is always false because at this program point the variable needMerge is always equal to {1} at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1273
+* UNREACHABLE_CODE: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1286
+    [needMerge == 0 is always false because at this program point the variable needMerge is always equal to {1}] needMerge == 0 is always false because at this program point the variable needMerge is always equal to {1} at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1286
+* UNREACHABLE_CODE: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+    [<internalIdx4> != 0 is always false because at this program point the variable <internalIdx4> is always equal to {0}] <internalIdx4> != 0 is always false because at this program point the variable <internalIdx4> is always equal to {0} at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java:680
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java:679
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:269
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:268
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:568
+    [Call of 'ClassUtil.unwrapAndThrowAsIAE'] Call of 'ClassUtil.unwrapAndThrowAsIAE' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:567
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:595
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:595
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:597
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:597
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:603
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:603
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java:847
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java:847
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java:852
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java:852
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4863
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4863
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1241
+    [Call of 'ClassUtil._failGetClassMethods'] Call of 'ClassUtil._failGetClassMethods' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1241
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1248
+    [Call of 'ClassUtil._failGetClassMethods'] Call of 'ClassUtil._failGetClassMethods' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1248
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1253
+    [Call of 'ClassUtil._failGetClassMethods'] Call of 'ClassUtil._failGetClassMethods' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1253
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1256
+    [Call of 'ClassUtil._failGetClassMethods'] Call of 'ClassUtil._failGetClassMethods' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1256
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/jsontype/impl/SubTypeValidator.java:302
+    [Call of 'DeserializationContext.reportBadTypeDefinition'] Call of 'DeserializationContext.reportBadTypeDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/jsontype/impl/SubTypeValidator.java:302
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:958
+    [Call of 'DeserializationContext.reportBadTypeDefinition'] Call of 'DeserializationContext.reportBadTypeDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:958
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:148
+    [Call of 'DeserializerCache._handleUnknownValueDeserializer'] Call of 'DeserializerCache._handleUnknownValueDeserializer' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:148
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java:1797
+    [Call of 'DeserializationContext.reportPropertyInputMismatch'] Call of 'DeserializationContext.reportPropertyInputMismatch' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java:1797
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:168
+    [Call of 'DeserializerCache._handleUnknownKeyDeserializer'] Call of 'DeserializerCache._handleUnknownKeyDeserializer' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:168
+* UNREACHABLE_CODE.RET: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java:1362
+    [pns != 0 is always false because at this program point the variable pns is always equal to {0}] pns != 0 is always false because at this program point the variable pns is always equal to {0} at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java:1361
+* UNREACHABLE_CODE.RET: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:385
+    [inst != 0 is always false because at this program point the variable inst is always equal to {0}] inst != 0 is always false because at this program point the variable inst is always equal to {0} at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:384
+* UNUSED_FUNC_RES.MINOR: Return value of function 'JavaType.getKeyType' passed to 'keyType' at BasicDeserializerFactory.java:2365 is not used later.
+    function call at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:2365
+* UNUSED_FUNC_RES.MINOR: Return value of function 'MapType.getRawClass' passed to 'mapClass' at BasicDeserializerFactory.java:1545 is not used later.
+    function call at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1545

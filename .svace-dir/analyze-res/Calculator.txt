@@ -1,0 +1,26 @@
+[SPOTBUGS]
+  FB.EI_EXPOSE_REP: 1
+  FB.EI_EXPOSE_REP2: 1
+  FB.SF_SWITCH_NO_DEFAULT: 1
+[OTHER]
+  NO_CATCH: 1
+Total warnings: 4
+
+Number of analyzed source code lines: 735
+Warning density (per million lines of code): 5442,18
+
+
+* FB.EI_EXPOSE_REP: com.houarizegai.calculator.theme.properties.ThemeList.getThemes() may expose internal representation by returning ThemeList.themes
+    [At ThemeList.java:[line 12]] At ThemeList.java:[line 12] at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/ThemeList.java:12
+    [In method com.houarizegai.calculator.theme.properties.ThemeList.getThemes()] In method com.houarizegai.calculator.theme.properties.ThemeList.getThemes() at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/ThemeList.java:11
+    [In class com.houarizegai.calculator.theme.properties.ThemeList] In class com.houarizegai.calculator.theme.properties.ThemeList at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/ThemeList.java:8
+* FB.EI_EXPOSE_REP2: com.houarizegai.calculator.theme.properties.ThemeList.setThemes(List) may expose internal representation by storing an externally mutable object into ThemeList.themes
+    [At ThemeList.java:[line 16]] At ThemeList.java:[line 16] at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/ThemeList.java:16
+    [In method com.houarizegai.calculator.theme.properties.ThemeList.setThemes(List)] In method com.houarizegai.calculator.theme.properties.ThemeList.setThemes(List) at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/ThemeList.java:15
+    [In class com.houarizegai.calculator.theme.properties.ThemeList] In class com.houarizegai.calculator.theme.properties.ThemeList at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/theme/properties/ThemeList.java:8
+* FB.SF_SWITCH_NO_DEFAULT: Switch statement found in com.houarizegai.calculator.ui.CalculatorUI.lambda$initCalculatorTypeSelector$1(ItemEvent) where default case is missing
+    [At CalculatorUI.java:[lines 134-145]] At CalculatorUI.java:[lines 134-145] at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:134
+    [In method com.houarizegai.calculator.ui.CalculatorUI.lambda$initCalculatorTypeSelector$1(ItemEvent)] In method com.houarizegai.calculator.ui.CalculatorUI.lambda$initCalculatorTypeSelector$1(ItemEvent) at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:1
+    [In class com.houarizegai.calculator.ui.CalculatorUI] In class com.houarizegai.calculator.ui.CalculatorUI at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/ui/CalculatorUI.java:1
+* NO_CATCH: Top-level function 'App.main' doesn't catch exceptions of types 'java/lang/IllegalArgumentException*', which could be thrown by callees.
+    Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8

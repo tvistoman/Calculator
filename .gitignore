@@ -5,3 +5,6 @@ out/
 
 # Maven
 target/
+
+*svace-dir
+target

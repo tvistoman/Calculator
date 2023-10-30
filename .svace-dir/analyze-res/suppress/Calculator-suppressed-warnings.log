@@ -1,0 +1,280 @@
+Following warning were suppressed by some internal heuristics because they looked too similar to some other warnings.
+* HANDLE_LEAK: The handle 'in' is created at [unknown]:42 by calling function 'new java.io.FileInputStream(java.lang.String)' and lost at [unknown]:43.
+    [acquire] Call of 'new java.io.FileInputStream(java.lang.String)' at [unknown]:42
+    [leaked] leaked at [unknown]:43
+    [assignment] assign at [unknown]:42
+Reason: specification (funcName: 'com/fasterxml/jackson/core/JsonFactory.createOwningParser:()Lcom/fasterxml/jackson/core/JsonParser;', moduleName: 'JsonFactory.class')
+
+* HANDLE_LEAK.EX: The handle 'in' is created at [unknown]:42 by calling function 'new java.io.FileInputStream(java.lang.String)' and lost at [unknown]:43.
+    [acquire] Call of 'new java.io.FileInputStream(java.lang.String)' at [unknown]:42
+    [leaked] leak at [unknown]:43
+Reason: specification (funcName: 'com/fasterxml/jackson/core/JsonFactory.createOwningParser:()Lcom/fasterxml/jackson/core/JsonParser;', moduleName: 'JsonFactory.class')
+
+* DEREF_OF_NULL.RET.STAT: Return value of a function 'TypeBase.findSuperType' is dereferenced at TypeFactory.java:917 without checking for null, but it is usually checked for this function (4/5).
+    [dereference] Dereference at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeFactory.java:917
+    [counter-example] counter-example: TypeBase.findSuperType at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeFactory.java:692
+    [counter-example] counter-example: TypeBase.findSuperType at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeFactory.java:533
+    [counter-example] counter-example: TypeBase.findSuperType at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeBase.java:144
+    [counter-example] counter-example: TypeBase.findSuperType at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/type/TypeBase.java:136
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/type/TypeFactory.constructCollectionType:(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/type/CollectionType;', moduleName: 'TypeFactory.class')
+
+* HANDLE_LEAK: The handle 'in' is created at [unknown]:42 by calling function 'new java.io.FileInputStream(java.lang.String)' and lost at [unknown]:43.
+    [acquire] Call of 'new java.io.FileInputStream(java.lang.String)' at [unknown]:42
+    [leaked] leaked at [unknown]:43
+    [assignment] assign at [unknown]:42
+Reason: source file not found (funcName: 'com/fasterxml/jackson/core/JsonFactory.createOwningParser:()Lcom/fasterxml/jackson/core/JsonParser;', moduleName: 'JsonFactory.class')
+
+* HANDLE_LEAK.EX: The handle 'in' is created at [unknown]:42 by calling function 'new java.io.FileInputStream(java.lang.String)' and lost at [unknown]:43.
+    [acquire] Call of 'new java.io.FileInputStream(java.lang.String)' at [unknown]:42
+    [leaked] leak at [unknown]:43
+Reason: source file not found (funcName: 'com/fasterxml/jackson/core/JsonFactory.createOwningParser:()Lcom/fasterxml/jackson/core/JsonParser;', moduleName: 'JsonFactory.class')
+
+* NEGATIVE_CODE_ERROR.EX: Variable 'nonAnnotatedParamIndex', which might receive a negative value at BasicDeserializerFactory.java:537, is used without checking at CreatorCandidate.java:63 by passing as 1st parameter to function 'candidate.findImplicitParamName(int)PropertyName' at BasicDeserializerFactory.java:597.
+    [value use] Variable 'nonAnnotatedParamIndex' is passed to function 'candidate.findImplicitParamName(int)PropertyName' as 1st parameter at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:597
+    [error code] Assign the negative value to variable 'nonAnnotatedParamIndex' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:537
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/BasicDeserializerFactory._addImplicitConstructorCreators:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/deser/BasicDeserializerFactory$CreatorCollectionState;Ljava/util/List;)V', moduleName: 'BasicDeserializerFactory.class')
+
+* NEW.DEREF_OF_NULL.INCONSISTENT: Reference ''e'' that is compared to a null value at NativeImageUtil.java:36, is dereferenced at NativeImageUtil.java:36.
+    [null] Compared with null at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/NativeImageUtil.java:36
+    [dereference] (e instanceof class java/lang/reflect/InvocationTargetException) == 0 at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/NativeImageUtil.java:36
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/util/NativeImageUtil.isUnsupportedFeatureError:(Ljava/lang/Throwable;)Z', moduleName: 'NativeImageUtil.class')
+
+* NEW.DEREF_OF_NULL.INCONSISTENT: Reference ''p0'' that is compared to a null value at ObjectMapper.java:4738, is dereferenced at ObjectMapper.java:4723.
+    [null] Compared with null at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+    [dereference] Variable 'p' is passed to function 'this._initForReading(JsonParser,JavaType)JsonToken' as 1st parameter at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4723
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/ObjectMapper._readMapAndClose:(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Object;', moduleName: 'ObjectMapper.class')
+
+* NEW.DEREF_OF_NULL.INCONSISTENT: Reference ''type'' that is compared to a null value at DeserializerCache.java:387, is dereferenced at DeserializerCache.java:371.
+    [null] Compared with null at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:387
+    [dereference] deref at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:371
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/DeserializerCache._createDeserializer2:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/deser/DeserializerFactory;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonDeserializer;', moduleName: 'DeserializerCache.class')
+
+* NEW.DEREF_OF_NULL.INCONSISTENT: Reference ''type._class'' that is compared to a null value at SubTypeValidator.java:279, is dereferenced at SubTypeValidator.java:265.
+    [null] Compared with null at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/jsontype/impl/SubTypeValidator.java:279
+    [dereference] deref at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/jsontype/impl/SubTypeValidator.java:265
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/jsontype/impl/SubTypeValidator.validateSubType:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/BeanDescription;)V', moduleName: 'SubTypeValidator.class')
+
+* NULL_AFTER_DEREF: Reference 'p', which is dereferenced at ObjectMapper.java:4814 by passing as 1st parameter to function 'this._initForReading(JsonParser,JavaType)JsonToken' at ObjectMapper.java:4723, is compared to a null value at ObjectMapper.java:4738.
+    [null check] null check at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+    [dereference] Variable 'p' is passed to function 'this._initForReading(JsonParser,JavaType)JsonToken' as 1st parameter at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4723
+    [assign] assign at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/ObjectMapper._readMapAndClose:(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Object;', moduleName: 'ObjectMapper.class')
+
+* REDUNDANT_COMPARISON: Redundant comparison of '<internalIdx4>' with null constant at ObjectMapper.java:4738.
+    [comparison] comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+    [is not null] result of new is not null at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4721
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/ObjectMapper._readMapAndClose:(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Object;', moduleName: 'ObjectMapper.class')
+
+* REDUNDANT_COMPARISON: Redundant comparison 'gen' == '0' ({0} == 0) is always true at DatabindContext.java:329.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DatabindContext.java:329
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/DatabindContext.objectIdGeneratorInstance:(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;', moduleName: 'DatabindContext.class')
+
+* REDUNDANT_COMPARISON: Redundant comparison 'conv' == '0' ({0} == 0) is always true at DatabindContext.java:382.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DatabindContext.java:382
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/DatabindContext.converterInstance:(Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/util/Converter;', moduleName: 'DatabindContext.class')
+
+* REDUNDANT_COMPARISON: Redundant comparison 'conv' == '0' ({0} == 0) is always true at BasicBeanDescription.java:848.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/BasicBeanDescription.java:848
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/introspect/BasicBeanDescription._createConverter:(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/util/Converter;', moduleName: 'BasicBeanDescription.class')
+
+* REDUNDANT_COMPARISON: Redundant comparison 'resolver' == '0' ({0} == 0) is always true at DatabindContext.java:342.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DatabindContext.java:342
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/DatabindContext.objectIdResolverInstance:(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;)Lcom/fasterxml/jackson/annotation/ObjectIdResolver;', moduleName: 'DatabindContext.class')
+
+* REDUNDANT_COMPARISON: Redundant comparison 'tryToResolveUnresolvedObjectId()' == '0' ({0} == 0) is always true at DefaultDeserializationContext.java:167.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DefaultDeserializationContext.java:167
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/DefaultDeserializationContext.checkUnresolvedObjectId:()V', moduleName: 'DefaultDeserializationContext.class')
+
+* REDUNDANT_COMPARISON.ALWAYS_FALSE: Redundant comparison 'pns' != '0' ({0} != 0) is always false at POJOPropertiesCollector.java:1361.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java:1361
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector._findNamingStrategy:()Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;', moduleName: 'POJOPropertiesCollector.class')
+
+* REDUNDANT_COMPARISON.ALWAYS_FALSE: Redundant comparison 'inst' != '0' ({0} != 0) is always false at BasicDeserializerFactory.java:384.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:384
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/BasicDeserializerFactory._valueInstantiatorInstance:(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;', moduleName: 'BasicDeserializerFactory.class')
+
+* REDUNDANT_COMPARISON.ALWAYS_FALSE: Redundant comparison 'needMerge' == '0' ({1} == 0) is always false at BasicDeserializerFactory.java:1273.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1273
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/BasicDeserializerFactory._getSetterInfo:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/PropertyMetadata;)Lcom/fasterxml/jackson/databind/PropertyMetadata;', moduleName: 'BasicDeserializerFactory.class')
+
+* REDUNDANT_COMPARISON.ALWAYS_FALSE: Redundant comparison 'needMerge' == '0' ({1} == 0) is always false at BasicDeserializerFactory.java:1286.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1286
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/BasicDeserializerFactory._getSetterInfo:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/PropertyMetadata;)Lcom/fasterxml/jackson/databind/PropertyMetadata;', moduleName: 'BasicDeserializerFactory.class')
+
+* REDUNDANT_COMPARISON.ALWAYS_FALSE: Redundant comparison '<internalIdx4>' == '0' ({[1, +inf]} == 0) is always false at ObjectMapper.java:4738.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/ObjectMapper._readMapAndClose:(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Object;', moduleName: 'ObjectMapper.class')
+
+* REDUNDANT_COMPARISON.RET: Redundant comparison 'tryToResolveUnresolvedObjectId()' != '0' ({0} != 0) is always false at DefaultDeserializationContext.java:167.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DefaultDeserializationContext.java:167
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/DefaultDeserializationContext.checkUnresolvedObjectId:()V', moduleName: 'DefaultDeserializationContext.class')
+
+* UNREACHABLE_CODE: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+    [<internalIdx4> == 0 is always false because at this program point all possible values of the variable <internalIdx4> belong to {[1, +inf]}] <internalIdx4> == 0 is always false because at this program point all possible values of the variable <internalIdx4> belong to {[1, +inf]} at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/ObjectMapper._readMapAndClose:(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Object;', moduleName: 'ObjectMapper.class')
+
+* UNREACHABLE_CODE: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1273
+    [needMerge == 0 is always false because at this program point the variable needMerge is always equal to {1}] needMerge == 0 is always false because at this program point the variable needMerge is always equal to {1} at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1273
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/BasicDeserializerFactory._getSetterInfo:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/PropertyMetadata;)Lcom/fasterxml/jackson/databind/PropertyMetadata;', moduleName: 'BasicDeserializerFactory.class')
+
+* UNREACHABLE_CODE: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1286
+    [needMerge == 0 is always false because at this program point the variable needMerge is always equal to {1}] needMerge == 0 is always false because at this program point the variable needMerge is always equal to {1} at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1286
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/BasicDeserializerFactory._getSetterInfo:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/PropertyMetadata;)Lcom/fasterxml/jackson/databind/PropertyMetadata;', moduleName: 'BasicDeserializerFactory.class')
+
+* UNREACHABLE_CODE: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+    [<internalIdx4> != 0 is always false because at this program point the variable <internalIdx4> is always equal to {0}] <internalIdx4> != 0 is always false because at this program point the variable <internalIdx4> is always equal to {0} at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/ObjectMapper._readMapAndClose:(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Object;', moduleName: 'ObjectMapper.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java:680
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java:679
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/DeserializationContext.findKeyDeserializer:(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/KeyDeserializer;', moduleName: 'DeserializationContext.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:269
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:268
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/DeserializerCache._createAndCache2:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/deser/DeserializerFactory;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JsonDeserializer;', moduleName: 'DeserializerCache.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:568
+    [Call of 'ClassUtil.unwrapAndThrowAsIAE'] Call of 'ClassUtil.unwrapAndThrowAsIAE' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:567
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/util/ClassUtil.createInstance:(Ljava/lang/Class;Z)Ljava/lang/Object;', moduleName: 'ClassUtil.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:595
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:595
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/DeserializerCache._handleUnknownValueDeserializer:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JsonDeserializer;', moduleName: 'DeserializerCache.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:597
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:597
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/DeserializerCache._handleUnknownValueDeserializer:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JsonDeserializer;', moduleName: 'DeserializerCache.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:603
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:603
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/DeserializerCache._handleUnknownKeyDeserializer:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/KeyDeserializer;', moduleName: 'DeserializerCache.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java:847
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java:847
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.constructAnySetter:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Lcom/fasterxml/jackson/databind/deser/SettableAnyProperty;', moduleName: 'BeanDeserializerFactory.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java:852
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.java:852
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/BeanDeserializerFactory.constructAnySetter:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Lcom/fasterxml/jackson/databind/deser/SettableAnyProperty;', moduleName: 'BeanDeserializerFactory.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4863
+    [Call of 'DeserializationContext.reportBadDefinition'] Call of 'DeserializationContext.reportBadDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4863
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/ObjectMapper._findRootDeserializer:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JsonDeserializer;', moduleName: 'ObjectMapper.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1241
+    [Call of 'ClassUtil._failGetClassMethods'] Call of 'ClassUtil._failGetClassMethods' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1241
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/util/ClassUtil.getClassMethods:(Ljava/lang/Class;)[Ljava/lang/reflect/Method;', moduleName: 'ClassUtil.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1248
+    [Call of 'ClassUtil._failGetClassMethods'] Call of 'ClassUtil._failGetClassMethods' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1248
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/util/ClassUtil.getClassMethods:(Ljava/lang/Class;)[Ljava/lang/reflect/Method;', moduleName: 'ClassUtil.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1253
+    [Call of 'ClassUtil._failGetClassMethods'] Call of 'ClassUtil._failGetClassMethods' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1253
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/util/ClassUtil.getClassMethods:(Ljava/lang/Class;)[Ljava/lang/reflect/Method;', moduleName: 'ClassUtil.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1256
+    [Call of 'ClassUtil._failGetClassMethods'] Call of 'ClassUtil._failGetClassMethods' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/util/ClassUtil.java:1256
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/util/ClassUtil.getClassMethods:(Ljava/lang/Class;)[Ljava/lang/reflect/Method;', moduleName: 'ClassUtil.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/jsontype/impl/SubTypeValidator.java:302
+    [Call of 'DeserializationContext.reportBadTypeDefinition'] Call of 'DeserializationContext.reportBadTypeDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/jsontype/impl/SubTypeValidator.java:302
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/jsontype/impl/SubTypeValidator.validateSubType:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/BeanDescription;)V', moduleName: 'SubTypeValidator.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:958
+    [Call of 'DeserializationContext.reportBadTypeDefinition'] Call of 'DeserializationContext.reportBadTypeDefinition' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:958
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/BasicDeserializerFactory._addExplicitAnyCreator:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/deser/impl/CreatorCollector;Lcom/fasterxml/jackson/databind/deser/impl/CreatorCandidate;Lcom/fasterxml/jackson/databind/cfg/ConstructorDetector;)V', moduleName: 'BasicDeserializerFactory.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:148
+    [Call of 'DeserializerCache._handleUnknownValueDeserializer'] Call of 'DeserializerCache._handleUnknownValueDeserializer' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:148
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/DeserializerCache.findValueDeserializer:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/deser/DeserializerFactory;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JsonDeserializer;', moduleName: 'DeserializerCache.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java:1797
+    [Call of 'DeserializationContext.reportPropertyInputMismatch'] Call of 'DeserializationContext.reportPropertyInputMismatch' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/DeserializationContext.java:1797
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/DeserializationContext.reportPropertyInputMismatch:(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;', moduleName: 'DeserializationContext.class')
+
+* UNREACHABLE_CODE.EXCEPTION: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:168
+    [Call of 'DeserializerCache._handleUnknownKeyDeserializer'] Call of 'DeserializerCache._handleUnknownKeyDeserializer' at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/DeserializerCache.java:168
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/DeserializerCache.findKeyDeserializer:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/deser/DeserializerFactory;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/KeyDeserializer;', moduleName: 'DeserializerCache.class')
+
+* UNREACHABLE_CODE.RET: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java:1362
+    [pns != 0 is always false because at this program point the variable pns is always equal to {0}] pns != 0 is always false because at this program point the variable pns is always equal to {0} at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector.java:1361
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/introspect/POJOPropertiesCollector._findNamingStrategy:()Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;', moduleName: 'POJOPropertiesCollector.class')
+
+* UNREACHABLE_CODE.RET: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:385
+    [inst != 0 is always false because at this program point the variable inst is always equal to {0}] inst != 0 is always false because at this program point the variable inst is always equal to {0} at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:384
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/BasicDeserializerFactory._valueInstantiatorInstance:(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;', moduleName: 'BasicDeserializerFactory.class')
+
+* UNUSED_FUNC_RES.MINOR: Return value of function 'JavaType.getKeyType' passed to 'keyType' at BasicDeserializerFactory.java:2365 is not used later.
+    function call at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:2365
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.resolveMemberAndTypeAnnotations:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JavaType;', moduleName: 'BasicDeserializerFactory.class')
+
+* UNUSED_FUNC_RES.MINOR: Return value of function 'MapType.getRawClass' passed to 'mapClass' at BasicDeserializerFactory.java:1545 is not used later.
+    function call at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1545
+Reason: source file not found (funcName: 'com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.createMapDeserializer:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/type/MapType;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonDeserializer;', moduleName: 'BasicDeserializerFactory.class')
+
+* HANDLE_LEAK.EX: The handle 'in' is created at [unknown]:42 by calling function 'new java.io.FileInputStream(java.lang.String)' and lost at [unknown]:43.
+    [acquire] Call of 'new java.io.FileInputStream(java.lang.String)' at [unknown]:42
+    [leaked] leak at [unknown]:43
+Reason: Similar warning HANDLE_LEAK
+
+* NO_CATCH.LIBRARY: Top-level function 'App.main' doesn't catch exceptions of types 'java/lang/SecurityException*, java/util/IllegalFormatException*, java/util/NoSuchElementException*', which could be thrown by callees.
+    [exception trace] Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8
+    [exception trace] Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8
+    [exception trace] Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8
+    source line: "new CalculatorUI();"
+Reason: Similar warning NO_CATCH
+
+* NO_CATCH.STRICT: Top-level function 'App.main' doesn't catch exceptions of types 'java/lang/IllegalStateException*, java/lang/NegativeArraySizeException*, java/lang/NullPointerException*', which could be thrown by callees.
+    [exception trace] Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8
+    [exception trace] Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8
+    [exception trace] Call of 'new com.houarizegai.calculator.ui.CalculatorUI()' at /home/t/projects/Calculator/src/main/java/com/houarizegai/calculator/App.java:8
+    source line: "new CalculatorUI();"
+Reason: Similar warning NO_CATCH
+
+* REDUNDANT_COMPARISON: Redundant comparison of '<internalIdx4>' with null constant at ObjectMapper.java:4738.
+    [comparison] comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+    [is not null] result of new is not null at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4721
+Reason: Similar warning UNREACHABLE_CODE
+
+* REDUNDANT_COMPARISON.ALWAYS_FALSE: Redundant comparison '<internalIdx4>' == '0' ({[1, +inf]} == 0) is always false at ObjectMapper.java:4738.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+Reason: Similar warning UNREACHABLE_CODE
+
+* REDUNDANT_COMPARISON.ALWAYS_FALSE: Redundant comparison 'needMerge' == '0' ({1} == 0) is always false at BasicDeserializerFactory.java:1273.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1273
+Reason: Similar warning UNREACHABLE_CODE
+
+* REDUNDANT_COMPARISON.ALWAYS_FALSE: Redundant comparison 'needMerge' == '0' ({1} == 0) is always false at BasicDeserializerFactory.java:1286.
+    comparison at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/deser/BasicDeserializerFactory.java:1286
+Reason: Similar warning UNREACHABLE_CODE
+
+* UNREACHABLE_CODE: This statement in the source code might be unreachable during program execution.
+    [unreachable] unreachable at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+    [<internalIdx4> == 0 is always false because at this program point all possible values of the variable <internalIdx4> belong to {[1, +inf]}] <internalIdx4> == 0 is always false because at this program point all possible values of the variable <internalIdx4> belong to {[1, +inf]} at jackson-databind-2.14.2.jar!com/fasterxml/jackson/databind/ObjectMapper.java:4738
+Reason: similar
+

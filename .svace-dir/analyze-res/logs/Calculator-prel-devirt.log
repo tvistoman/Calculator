@@ -1,0 +1,10 @@
+Devirtualization result:
+Procedure com/fasterxml/jackson/databind/deser/BasicDeserializerFactory._findCreatorsFromProperties:(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/BeanDescription;)Ljava/util/Map;: 
+ owner com/fasterxml/jackson/databind/introspect/AnnotatedWithParams.getParameterCount:()I:
+    FUNC'com/fasterxml/jackson/databind/introspect/AnnotatedConstructor.getParameterCount:()I
+Procedure com/fasterxml/jackson/databind/deser/impl/CreatorCollector.verifyNonDup:(Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;IZ)Z: 
+ newOne com/fasterxml/jackson/databind/introspect/AnnotatedWithParams.getRawParameterType:(I)Ljava/lang/Class;:
+    FUNC'com/fasterxml/jackson/databind/introspect/AnnotatedConstructor.getRawParameterType:(I)Ljava/lang/Class;
+Procedure com/fasterxml/jackson/databind/introspect/POJOPropertyBuilder._rawTypeOf:(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Ljava/lang/Class;: 
+ m com/fasterxml/jackson/databind/introspect/AnnotatedMember.getType:()Lcom/fasterxml/jackson/databind/JavaType;:
+    FUNC'com/fasterxml/jackson/databind/introspect/AnnotatedParameter.getType:()Lcom/fasterxml/jackson/databind/JavaType;
